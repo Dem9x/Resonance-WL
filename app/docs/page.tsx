@@ -78,6 +78,7 @@ const sections = [
   }
 ];
 
+
 const quickLinks = ["Protocol", "Artifact", "Signal", "Miner", "Native Power", "Metadata", "Safety"];
 
 export default function DocsPage() {
