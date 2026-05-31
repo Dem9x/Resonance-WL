@@ -83,7 +83,7 @@ export default function WaitlistPage() {
     </div>
 
     {/* Mid/Desktop: richer animation */}
-    <div className="hidden h-[520px] md:block xl:h-[620px]">
+    <div className="hidden h-[520px] md:block ">
       <SandSettleAnimation2
         particleCount={620}
         intensity="medium"

@@ -90,34 +90,41 @@ export default function DocsPage() {
         <div className="absolute inset-0 opacity-35 archive-grid" />
         <div className="absolute -right-20 -top-24 h-72 w-72 rounded-full border border-[var(--accent)]/20" />
         <div className="relative grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-          <div>
-            <p className="font-display text-xs font-bold uppercase tracking-[0.34em] text-[var(--accent)]">Technical Docs</p>
-            <h1 className="mt-4 max-w-4xl font-display text-5xl font-black uppercase leading-none text-[var(--text)] md:text-7xl">
-              Resonance Mining Manual
-            </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-[var(--muted)]">
-              A field guide for Chladni Nodes, deterministic hashrate, RE native power, staking flow, Filebase/IPFS metadata, and Sepolia-first deployment.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Link href="/stake" className="rounded-full px-5 py-3 text-sm font-black theme-button">
-                Open Miner Console
-              </Link>
-              <Link href="/" className="rounded-full px-5 py-3 text-sm font-black theme-button-secondary">
-                Join Waitlist
-              </Link>
-            </div>
-          </div>
-          <div className="glass-panel overflow-hidden rounded-[2rem] p-3">
-<div className="block md:hidden">
-<ResonanceWaveChart frequency={963} />
+  <div>
+    <p className="font-display text-xs font-bold uppercase tracking-[0.34em] text-[var(--accent)]">
+      Technical Docs
+    </p>
+
+    <h1 className="mt-4 max-w-4xl font-display text-5xl font-black uppercase leading-none text-[var(--text)] md:text-7xl">
+      Resonance Mining Manual
+    </h1>
+
+    <p className="mt-5 max-w-2xl text-lg leading-8 text-[var(--muted)]">
+      A field guide for Chladni Nodes, deterministic hashrate, RE native power,
+      staking flow, Filebase/IPFS metadata, and Sepolia-first deployment.
+    </p>
+
+    <div className="mt-7 flex flex-wrap gap-3">
+      <Link href="/stake" className="rounded-full px-5 py-3 text-sm font-black theme-button">
+        Open Miner Console
+      </Link>
+
+      <Link href="/" className="rounded-full px-5 py-3 text-sm font-black theme-button-secondary">
+        Join Waitlist
+      </Link>
+    </div>
+  </div>
+
+  <div className="glass-panel overflow-hidden rounded-[2rem] p-3">
+  <div className="block h-[320px] md:hidden">
+    <ResonanceWaveChart frequency={963} />
+  </div>
+
+  <div className="hidden h-[420px] md:block ">
+    <ResonanceWaveChart2 frequency={963} />
+  </div>
 </div>
-{/* Tablet + desktop animation */}
-  <div className="hidden md:block">
-<ResonanceWaveChart2 frequency={963} />
-          </div>
-          <ResonanceWaveChart2 frequency={963} />
-        </div>
-           </div>
+</div>
       </section>
 
       <section className="mt-8 grid gap-5 lg:grid-cols-[280px_minmax(0,1fr)]">
