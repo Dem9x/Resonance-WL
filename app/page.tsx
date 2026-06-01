@@ -12,14 +12,41 @@ import { WaitlistStatsPanel } from "@/components/waitlist/WaitlistStatsPanel";
 
 const targetDate = process.env.NEXT_PUBLIC_WAITLIST_TARGET_DATE || "2026-06-30T12:00:00Z";
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
+  "https://www.resonancegenesis.xyz";
+
+const ogImageUrl = `${siteUrl}/resonance-genesis-og.png`;
+
 export const metadata: Metadata = {
   title: "Resonance Genesis Waitlist | Chladni Node Miner Access",
-  description: "Join the Resonance Genesis waitlist for early access to Chladni Node NFTs, RE native power, and cymatics-inspired miner utility.",
+  description:
+    "Join the Resonance Genesis waitlist for early access to Chladni Node NFTs, RE native power, and cymatics-inspired miner utility.",
+
   openGraph: {
     title: "Resonance Genesis Waitlist",
-    description: "Early access to Chladni Node NFTs, RE native power, and cymatics-inspired miner utility.",
-    images: ["/og/waitlist.png"]
-  }
+    description:
+      "Early access to Chladni Node NFTs, RE native power, and cymatics-inspired miner utility.",
+    url: siteUrl,
+    siteName: "Resonance Genesis",
+    type: "website",
+    images: [
+      {
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
+        alt: "Resonance Genesis Waitlist",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Resonance Genesis Waitlist",
+    description:
+      "Early access to Chladni Node NFTs, RE native power, and cymatics-inspired miner utility.",
+    images: [ogImageUrl],
+  },
 };
 
 export default function WaitlistPage() {

@@ -4,7 +4,7 @@ import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ThemeProvider } from "@/theme/ThemeProvider";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,40 +16,48 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
+  "https://www.resonancegenesis.xyz";
+
+const ogImageUrl = `${siteUrl}/og-image.png`;
+
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
-  ),
+  metadataBase: new URL(siteUrl),
+
   title: "Resonance Genesis",
-  description: "Generative cymatics NFT collection and Chladni Node miner dashboard.",
-  
-  // TAMBAHKAN SETTINGAN ICONS TRANSPARAN DI SINI
+  description:
+    "Generative Chladni NFT collection. Stake Chladni Nodes and mine RE native power.",
+
   icons: {
-    icon: [
-// Otomatis mengarah ke public/favicon.ico
-      { url: "/res.png", type: "image/png", sizes: "32x32" } 
-    ],
+    icon: [{ url: "/res.png", type: "image/png", sizes: "32x32" }],
+    shortcut: "/res.png",
+    apple: "/res.png",
   },
 
   openGraph: {
     title: "Resonance Genesis",
-    description: "Generative cymatics NFT collection and Chladni Node miner dashboard.",
-    url: "/",
+    description:
+      "Generative Chladni NFT collection. Stake Chladni Nodes and mine RE native power.",
+    url: siteUrl,
     siteName: "Resonance Genesis",
+    type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: ogImageUrl,
         width: 1200,
         height: 630,
         alt: "Resonance Genesis",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Resonance Genesis",
-    description: "Generative cymatics NFT collection and Chladni Node miner dashboard.",
-    images: ["/og-image.png"],
+    description:
+      "Generative Chladni NFT collection. Stake Chladni Nodes and mine RE native power.",
+    images: [ogImageUrl],
   },
 };
 
